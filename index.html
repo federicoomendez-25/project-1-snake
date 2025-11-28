@@ -7,8 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Snake FM</h1>
-    <div id="game-board"></div>
+    <!-- MENÚ -->
+    <div id="menu">
+        <h1>🐍 Snake FM 🐍</h1>
+        <input type="text" id="playerName" placeholder="Ingresa tu nombre" maxlength="15">
+        <button id="startBtn">Play</button>
+        <ul id="instructions">
+            <li>Usa las flechas ↑ ↓ ← → para mover la serpiente.</li>
+            <li>Recolecta la comida (manzana) para ganar puntos.</li>
+        </ul>
+    </div>
+
+    <!-- TABLERO DEL JUEGO -->
+    <div id="game-container" class="hidden">
+        <div id="player-name"></div>
+        <div id="game-board"></div>
+        <div id="score">Puntaje: 0</div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over" class="hidden">
+        <h2>Game Over</h2>
+        <p id="final-score">Tu puntaje: 0</p>
+        <button id="restartBtn">Reiniciar</button>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -1,21 +1,163 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
     height: 100vh;
-    margin: 0;
+}
+
+/* MENÚ */
+#menu {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease;
+}
+
+#menu h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #222;
+    text-shadow: 2px 2px #eee;
+}
+
+#menu input {
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+#menu button {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#menu button:hover {
+    background-color: #45a049;
+}
+
+#instructions {
+    margin-top: 15px;
+    text-align: left;
+    list-style: disc;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* TABLERO DEL JUEGO */
+#game-container {
+    text-align: center;
+}
+
+#player-name {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 #game-board {
     width: 600px;
     height: 400px;
-    background-color: #222;
-    display: grid;
-    grid-template-columns: repeat(30, 20px);
-    grid-template-rows: repeat(20, 20px);
-    border: 2px solid #000;
+    background-color: #111;
     position: relative;
+    margin-top: 20px;
+    border: 2px solid #000;
+}
+
+#score {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Serpiente */
+.snake-body {
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    position: absolute;
+}
+
+.snake-head {
+    width: 20px;
+    height: 20px;
+    background-color: lime;
+    position: absolute;
+    border: 2px solid #fff;
+}
+
+/* Comida como manzana (imagen) */
+.food {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-image: url('apple.png'); /* <--- Pon aquí la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+}
+
+/* GAME OVER */
+#game-over {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease;
+}
+
+#game-over h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e74c3c;
+}
+
+#game-over p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#game-over button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#game-over button:hover {
+    background-color: #2980b9;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
